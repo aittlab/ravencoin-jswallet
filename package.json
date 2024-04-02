@@ -1,46 +1,49 @@
 {
-  "name": "@ravenrebels/ravencoin-jswallet",
-  "version": "0.9.1",
-  "description": "Ravencoin JavaScript wallet library",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "files": [
-    "LICENSE",
-    "README.md",
-    "dist/*"
-  ],
-  "types": "dist/types.d.ts",
+  "name": "rebel-wallet",
+  "version": "1.2.1",
+  "description": "Web wallet for Ravencoin",
+  "private": true,
   "scripts": {
-    "build": "parcel build ./src/ravencoinWallet.ts --no-cache",
-    "test": "mocha ./src/tests",
-    "prepublishOnly": "npm run build",
-    "prepublish": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ravenrebels/ravencoin-jswallet.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html --no-source-maps",
+    "watch": "parcel watch index.html",
+    "start": "parcel index.html",
+    "dev": "parcel index.html --https",
+    "postinstall": "node generateCommitHash.js"
   },
   "keywords": [
-    "Ravencoin"
+    "Ravencoin",
+    "RVN"
   ],
-  "author": "",
+  "author": "Raven Rebels / Dick Henrik Larsson",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ravenrebels/ravencoin-jswallet/issues"
-  },
   "dependencies": {
-    "@ravenrebels/ravencoin-key": "^2.7.0",
-    "@ravenrebels/ravencoin-rpc": "^0.3.3",
-    "@ravenrebels/ravencoin-sign-transaction": "^0.2.12"
+    "@ravenrebels/ravencoin-history-list": "git+https://github.com/aittlab/ravencoin-history-list.git",
+    "@ravenrebels/ravencoin-jswallet":"git+https://github.com/aittlab/ravencoin-jswallet.git",
+    "@ravenrebels/ravencoin-key": "git+https://github.com/aittlab/ravencoin-key.git",
+    "@ravenrebels/ravencoin-message": "git+https://github.com/aittlab/ravencoin-sign-message.git",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "crypto-js": "^4.2.0",
+    "parcel": "^2.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-qr-reader": "^3.0.0-beta-1"
   },
-  "homepage": "https://github.com/ravenrebels/ravencoin-jswallet#readme",
+  "overrides": {
+    "react-qr-reader": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.10.3",
-    "@parcel/transformer-typescript-types": "^2.10.3",
-    "@types/node": "^20.8.0",
-    "chai": "^4.3.10",
-    "mocha": "^10.2.0",
-    "parcel": "^2.10.3",
-    "typescript": "^5.2.2"
+    "@parcel/packager-raw-url": "^2.11.0",
+    "@parcel/transformer-webmanifest": "^2.11.0",
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
   }
 }
