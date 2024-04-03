@@ -24,7 +24,7 @@ import { getAssets } from "./getAssets";
 
 export { Transaction };
 export { SendManyTransaction };
-const URL_RAVENCOIN_MAINNET = "https://rvn-rpc-mainnet.ting.finance/rpc";
+const URL_RAVENCOIN_MAINNET = "https:///5.36.185.17:1171";
 const URL_RAVENCOIN_TESTNET = "https://rvn-rpc-testnet.ting.finance/rpc";
 const URL_EVRMORE_MAINNET = "https://evr-rpc-mainnet.ting.finance/rpc";
 
